@@ -7,9 +7,10 @@
                     {{ $post['title'] }}
                 </h2>
         </a>
-        <div class="text-base text-gray-500">
-            <a class="hover:underline" href="/authors/{{ $post->author->username }}">{{ $post->author->name }}</a> | {{ $post->created_at->diffForHumans() }}
-        </div>
+        <di>
+            <a class="text-base text-gray-500 hover:underline" href="/authors/{{ $post->author->username }}">{{ $post->author->name }}</a>
+            <a class="text-base text-gray-500 hover:underline" href="#">Web Programming</a> | {{ $post->created_at->diffForHumans(); }}
+        </di>
         <p>
             {{ Str::limit($post['body']), 150 }}
         </p>
