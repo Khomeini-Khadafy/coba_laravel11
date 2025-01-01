@@ -5,8 +5,11 @@
             <h2 class="mb-1 text-3xl tracking-tight font-bold text-gray-700">
                 {{ $post['title'] }}
             </h2>
-            <div class="text-base text-gray-500">
-                <a href="#">{{ $post->author->name }}</a> | {{ $post->created_at->diffForHumans(); }}
+            <div >
+                By
+                <a class="text-base text-gray-500 hover:underline" href="/author/{{ $post->author->name }}">{{ $post->author->name }}</a> 
+                in
+                <a class="text-base text-gray-500 hover:underline" href="#">Web Programming</a> | {{ $post->created_at->diffForHumans(); }}
             </div>
             <p>
                 {{ ($post['body']) }}
