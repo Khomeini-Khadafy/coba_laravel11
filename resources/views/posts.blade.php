@@ -8,8 +8,11 @@
                 </h2>
         </a>
         <di>
-            <a class="text-base text-gray-500 hover:underline" href="/authors/{{ $post->author->username }}">{{ $post->author->name }}</a>
-            <a class="text-base text-gray-500 hover:underline" href="#">Web Programming</a> | {{ $post->created_at->diffForHumans(); }}
+            <a class="text-base text-gray-500 hover:underline"
+                href="/authors/{{ $post->author->username }}">{{ $post->author->name }}</a>
+            <a class="text-base text-gray-500 hover:underline"
+                href="/categories/{{ $post->category->slug }}">{{ $post->category->name }}</a> |
+            {{ $post->created_at->diffForHumans() }}
         </di>
         <p>
             {{ Str::limit($post['body']), 150 }}
