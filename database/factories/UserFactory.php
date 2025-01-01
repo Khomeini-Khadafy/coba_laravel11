@@ -31,7 +31,7 @@ class UserFactory extends Factory
         //     'password' => static::$password ??= Hash::make('password'),
         //     'remember_token' => Str::random(10),
         // ];
-        
+
          // supaya sama antara username dan nama yang saya buat
          $name = fake()->name();
          $username = str_replace(" ",".", strtolower($name));
@@ -41,8 +41,7 @@ class UserFactory extends Factory
              'email' => fake()->unique()->safeEmail(), 
              'password' => static::$password ??= Hash::make('Password'),
              'email_verified_at' => now(),
-             'remember_token' => Str::random(10), 
-             'created_at'=> $this->faker->dateTimeThisYear($max = 'now', $timezone = null) 
+             'remember_token' => Str::random(10)
          ];
     }
 
