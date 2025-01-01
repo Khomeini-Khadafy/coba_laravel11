@@ -15,8 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             // foreign key constraints
-            $table->foreignId('user_id')->constrained(
-                table: 'users', indexName: 'posts_user_id'
+            $table->foreignId('author_id')->constrained(
+                table: 'users', 
+                indexName: 'author_id'
             );
             $table->string('slug')->unique();
             $table->text('body');
