@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class UserSeeder extends Seeder
@@ -19,10 +20,11 @@ class UserSeeder extends Seeder
             'name'              => 'Khomeini Khadafy',
             'username'          => 'khomeini.khadafy',
             'email'             => 'khomeini.khadafy@gmail.com',
-            'email_verified_at' => 'now',
-            'remember_token'    => 'Str::random(10)'
+            'email_verified_at' =>  now(),
+            'password'          =>  Hash::make('passowrd'),
+            'remember_token'    =>  Str::random(10)
         ]);
-        
+
         User::factory(5)->create();
     }
 }
