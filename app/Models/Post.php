@@ -13,6 +13,9 @@ class Post extends Model
 {
     use HasFactory;
     protected $fillable = ['tilte', 'author', 'slug', 'body'];
+    
+    // noted * jika mau simple menggunakan Eager Load secara default
+    // *protected $with = ['author', 'category'];
 
     // eloquent relationship "BelongsTo" untuk author
     public function author(): BelongsTo
