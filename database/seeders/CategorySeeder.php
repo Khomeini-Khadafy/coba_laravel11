@@ -14,20 +14,24 @@ class CategorySeeder extends Seeder
     {
         // contoh membuat data category manual
         Category::create([
-            'name' => 'Web Design',
-            'slug' => 'web-design',
+            'name'      => 'Web Design',
+            'slug'      => 'web-design',
+            'color'     => 'red'
         ]);
         Category::create([
-            'name' => 'Manchine Learning',
-            'slug' => 'manchine-learning',
+            'name'      => 'Manchine Learning',
+            'slug'      => 'manchine-learning',
+            'color'     => 'green'
         ]);
         Category::create([
-            'name' => 'UI UX',
-            'slug' => 'ui-ux',
+            'name'      => 'UI UX',
+            'slug'      => 'ui-ux',
+             'color'    => 'blue'
         ]);
         Category::create([
-            'name' => 'Data Structure',
-            'slug' => 'web-design',
+            'name'      => 'Data Structure',
+            'slug'      => 'web-design',
+             'color'    => 'yellow'
         ]);
 
     }
