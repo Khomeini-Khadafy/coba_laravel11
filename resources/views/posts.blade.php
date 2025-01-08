@@ -28,9 +28,8 @@
                     <div class="flex justify-between items-center mb-5 text-gray-500">
                         <a href="/categories/{{ $post->category->slug }}">
                             <span
-                                class="bg-primary-100 text-primary-800 text-xs font-medium 
-                            inline-flex items-center px-2.5 py-0.5 
-                            rounded dark:bg-primary-200 dark:text-primary-800">
+                                class="bg-{{ $post->category->color }}-100 text-primary-800 text-xs font-medium inline-flex 
+                                items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800">
                                 {{ $post->category->name }}
                             </span>
                         </a>
@@ -46,11 +45,13 @@
                             <img class="w-7 h-7 rounded-full"
                                 src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png"
                                 alt="Jese Leos avatar" />
-                            <span class="font-medium dark:text-white">
-                                {{ $post->author->name }}
-                            </span>
+                            <a href="/authors/{{ $post->author->username }}">
+                                <span class="font-medium dark:text-white">
+                                    {{ $post->author->name }}
+                                </span>
+                            </a>
                         </div>
-                        <a href="/posts/{{ $post['slug'] }}"
+                        <a href="/posts/{{ $post->slug }}"
                             class="inline-flex items-center font-medium
                            text-primary-600 dark:text-primary-500 hover:underline">
                             Read more &raquo;

@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id(); //harus menghubungkan ke migrations post
             $table->string('name');
             $table->string('slug')->unique;
+            $table->string('color');
             $table->timestamps();
         });
     }
