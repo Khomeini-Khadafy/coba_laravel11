@@ -30,7 +30,7 @@ class CategorySeeder extends Seeder
         ]);
         Category::create([
             'name'      => 'Data Structure',
-            'slug'      => 'web-design',
+            'slug'      => 'data-structure',
              'color'    => 'yellow'
         ]);
 

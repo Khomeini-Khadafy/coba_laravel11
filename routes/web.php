@@ -1,8 +1,8 @@
 <?php
 
-use App\Models\User;
-use App\Models\Post;
 use App\Models\Category;
+use App\Models\Post;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -14,9 +14,9 @@ Route::get('/about', function () {
 });
 
 Route::get('/posts', function () {
-    // membuat Eager Loading menggunkan with | Post::with('author')->latest()->get();
-    $post = Post::with(['author', 'category'])->latest()->get();
-    return view('posts', ['title' => 'Blog', 'posts' => $post]);
+    return view('posts', ['title' => 'Blog', 'posts' => 
+    // memanggil scopes filter ada didalam models
+    Post::filter(request(['search', 'category', 'author']))->latest()->simplePaginate(9)->withQueryString()]);
 });
 
 Route::get('/posts/{post:slug}', function (Post $post) {
