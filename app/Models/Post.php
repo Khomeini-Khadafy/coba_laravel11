@@ -33,6 +33,7 @@ class Post extends Model
     // untuk memanggil filter search 'local scope'
     public function scopeFilter(Builder $query, array $filters): void
     {
+        // untuk tampilan utama search
         $query->when
             ($filters['search'] ?? false,
             fn($query, $search) =>

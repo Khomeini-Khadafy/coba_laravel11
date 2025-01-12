@@ -14,7 +14,9 @@ Route::get('/about', function () {
 });
 
 Route::get('/posts', function () {
-    return view('posts', ['title' => 'Blog', 'posts' => Post::filter(request(['search', 'category', 'author']))->latest()->get()]);
+    return view('posts', ['title' => 'Blog', 'posts' => 
+    // memanggil scopes filter ada didalam models
+    Post::filter(request(['search', 'category', 'author']))->latest()->get()]);
 });
 
 Route::get('/posts/{post:slug}', function (Post $post) {
