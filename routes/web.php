@@ -1,8 +1,8 @@
 <?php
 
-use App\Models\User;
-use App\Models\Post;
 use App\Models\Category;
+use App\Models\Post;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -14,9 +14,7 @@ Route::get('/about', function () {
 });
 
 Route::get('/posts', function () {
-    // membuat Eager Loading menggunkan with | Post::with('author')->latest()->get();
-    $post = Post::with(['author', 'category'])->latest()->get();
-    return view('posts', ['title' => 'Blog', 'posts' => $post]);
+    return view('posts', ['title' => 'Blog', 'posts' => Post::filter(request(['search', 'category', 'author']))->latest()->get()]);
 });
 
 Route::get('/posts/{post:slug}', function (Post $post) {
